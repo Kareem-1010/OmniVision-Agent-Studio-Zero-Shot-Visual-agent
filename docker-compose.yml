@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  omnivision-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: omnivision-api
+    command: ["serve", "--host", "0.0.0.0", "--port", "8000"]
+    environment:
+      - OMNIVISION_DEVICE=cpu
+      - REDIS_URL=redis://redis:6379/0
+      - ENABLE_REDIS_CACHE=true
+      - OMNIVISION_API_KEY=dev-secret-omnivision-token-12345
+    ports:
+      - "8000:8000"
+    volumes:
+      - omnivision-cache:/app/.cache
+      - ./reports:/app/reports
+      - ./eval_artifacts:/app/eval_artifacts
+    depends_on:
+      - redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+
+  omnivision-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: omnivision-ui
+    command: ["ui", "--host", "0.0.0.0", "--port", "7860"]
+    environment:
+      - OMNIVISION_DEVICE=cpu
+      - REDIS_URL=redis://redis:6379/0
+    ports:
+      - "7860:7860"
+    volumes:
+      - omnivision-cache:/app/.cache
+    depends_on:
+      - omnivision-api
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: omnivision-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  omnivision-cache:
+    driver: local
+  redis-data:
+    driver: local

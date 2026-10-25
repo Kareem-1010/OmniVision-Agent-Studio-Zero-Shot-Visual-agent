@@ -1,0 +1,49 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Caches
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Model Weights & Large Binary Checkpoints (>100MB)
+weights/
+*.pt
+*.pth
+*.bin
+*.onnx
+*.engine
+*.safetensors
+*.ckpt
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Evaluation runs & temporary reports
+eval_artifacts/
+reports/*.html
+reports/*.json
+logs/
+*.log
+
+# OS artifacts
+.DS_Store
+Thumbs.db

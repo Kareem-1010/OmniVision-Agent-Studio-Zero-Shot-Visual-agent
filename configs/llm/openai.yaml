@@ -1,0 +1,9 @@
+provider: "openai"
+model: "gpt-4o"
+temperature: 0.1
+max_tokens: 4096
+timeout_seconds: 60.0
+max_retries: 3
+enable_json_repair: true
+api_key_env: "OPENAI_API_KEY"
+base_url: null

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnivision-agent"
+version = "3.0.0"
+description = "Research-Grade Multi-Agent Self-Improving Vision-Reasoning System"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "OmniVision Research Team", email = "research@omnivision.ai" }
+]
+dependencies = [
+    "pydantic>=2.7.0",
+    "hydra-core>=1.3.2",
+    "omegaconf>=2.3.0",
+    "torch>=2.2.0",
+    "torchvision>=0.17.0",
+    "numpy>=1.26.0",
+    "pillow>=10.2.0",
+    "httpx>=0.27.0",
+    "tenacity>=8.2.0",
+    "networkx>=3.2.0",
+    "typing-extensions>=4.10.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "redis>=5.0.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

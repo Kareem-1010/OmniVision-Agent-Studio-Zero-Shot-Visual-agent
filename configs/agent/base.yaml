@@ -1,0 +1,10 @@
+max_iterations: 15
+max_sub_goals: 8
+budget_limit_usd: 0.50
+timeout_seconds: 120.0
+enable_tree_search: true
+tree_search_candidates: 3
+enable_active_perception: true
+active_perception_zoom_threshold: 0.65
+enable_adversarial_verification: true
+conformal_alpha: 0.10

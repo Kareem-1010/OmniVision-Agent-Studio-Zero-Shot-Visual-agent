@@ -1,0 +1,22 @@
+# Retail Analytics Preset Configuration
+name: "retail"
+description: "Retail analytics preset for footfall, queue wait times, shelf gaps, and dwell heatmaps."
+system_prompt: "You are OmniVision Retail Specialist. Analyze retail environments to measure footfall, shopper dwell time, checkout queue congestion, and shelf out-of-stock gaps. Produce precise quantitative counts, spatial heatmaps, and restock alerts."
+enabled_tools:
+  - "detector_ensemble"
+  - "open_vocab"
+  - "grounded_segmenter"
+  - "video_tracker"
+  - "scene_ocr"
+  - "metric_depth"
+  - "visualizer"
+confidence_threshold: 0.45
+max_iterations: 8
+budget_limit_usd: 0.25
+custom_parameters:
+  tripwire_entry:
+    - [0.2, 0.8]
+    - [0.8, 0.8]
+  dwell_bins: 50
+  service_rate_per_min: 1.5
+  shelf_gap_threshold_ratio: 0.15
