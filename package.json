@@ -1,0 +1,55 @@
+{
+  "name": "omnivision-agent-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Zero-shot visual reasoning agent studio with multi-agent CV ensemble, 3D metric point clouds, and 4D scene graph.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kareem-1010/OmniVision-Agent-Studio-Zero-Shot-Visual-agent.git"
+  },
+  "keywords": [
+    "computer-vision",
+    "gemini-3.8-flash",
+    "zero-shot-agent",
+    "scene-graph",
+    "depth-estimation",
+    "threejs",
+    "react19",
+    "typescript"
+  ],
+  "author": "Kareem-1010",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "start": "node dist-server/server.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "three": "^0.186.1",
+    "vite": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.28.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2"
+  }
+}

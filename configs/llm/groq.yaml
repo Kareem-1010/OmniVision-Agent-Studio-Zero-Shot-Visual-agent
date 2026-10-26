@@ -1,8 +1,0 @@
-provider: "groq"
-model: "openai/gpt-oss-120b"
-temperature: 0.1
-max_tokens: 4096
-timeout_seconds: 45.0
-max_retries: 3
-enable_json_repair: true
-api_key_env: "GROQ_API_KEY"

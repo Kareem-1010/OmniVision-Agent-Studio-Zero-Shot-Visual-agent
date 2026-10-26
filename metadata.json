@@ -1,0 +1,6 @@
+{
+  "name": "OmniVision Agent",
+  "description": "Research-grade zero-shot multi-agent vision-reasoning system with real-time computer vision, depth estimation, 4D scene graph, and program synthesis.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

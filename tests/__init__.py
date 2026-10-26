@@ -1,1 +1,0 @@
-"""OmniVision Test Suite."""
